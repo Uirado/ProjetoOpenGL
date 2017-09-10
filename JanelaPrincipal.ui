@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>JanelaPrincipal</class>
+ <widget class="QWidget" name="JanelaPrincipal">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1005</width>
+    <height>617</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Projeto OpenGL</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,1">
+   <item>
+    <widget class="MeuPainelOpenGL" name="painelGL" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <item row="1" column="1">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="9" column="0" colspan="2">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>120</width>
+         <height>350</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="16" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>Mostrar linha original</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="0" colspan="2">
+      <widget class="QPushButton" name="bt_sair">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Sair</string>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="7" column="0">
+      <widget class="QSpinBox" name="x2_spinBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>X2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Y1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Y2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QSpinBox" name="malha_spinBox">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>20</number>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="0" colspan="2">
+      <widget class="QCheckBox" name="showGrid_checkbox">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string>Mostrar malha</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0" colspan="2">
+      <widget class="QRadioButton" name="pixelCentrado_radiob">
+       <property name="text">
+        <string>Pixel centrado</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSpinBox" name="y1_spinBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QSpinBox" name="x1_spinBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QSpinBox" name="y2_spinBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0" colspan="2">
+      <widget class="QRadioButton" name="pixelQuadrado_radiob">
+       <property name="text">
+        <string>Pixel quadrado</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>X1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Malha:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Octante:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="labelOctanteValue">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MeuPainelOpenGL</class>
+   <extends>QWidget</extends>
+   <header>MeuPainelOpenGL.h</header>
+   <container>1</container>
+   <slots>
+    <signal>setMalhaSignal(int)</signal>
+    <signal>sendOctante(int)</signal>
+    <slot>showMalhaToggle()</slot>
+    <slot>setX1(int)</slot>
+    <slot>setY1(int)</slot>
+    <slot>setX2(int)</slot>
+    <slot>setY2(int)</slot>
+    <slot>updateMalha(int)</slot>
+    <slot>showLinhaOriginalToggle()</slot>
+    <slot>setPixelCentrado()</slot>
+    <slot>setPixelQuadrado()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>bt_sair</sender>
+   <signal>clicked()</signal>
+   <receiver>JanelaPrincipal</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>981</x>
+     <y>606</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>587</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showGrid_checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>painelGL</receiver>
+   <slot>showMalhaToggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>981</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>257</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x1_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>painelGL</receiver>
+   <slot>setX1(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>975</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x2_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>painelGL</receiver>
+   <slot>setX2(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>899</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y1_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>painelGL</receiver>
+   <slot>setY1(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>899</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y2_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>painelGL</receiver>
+   <slot>setY2(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>975</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>248</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>painelGL</sender>
+   <signal>setMalhaSignal(int)</signal>
+   <receiver>malha_spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>417</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>981</x>
+     <y>531</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>malha_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>painelGL</receiver>
+   <slot>updateMalha(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>981</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>painelGL</receiver>
+   <slot>showLinhaOriginalToggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>879</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>763</x>
+     <y>534</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pixelCentrado_radiob</sender>
+   <signal>pressed()</signal>
+   <receiver>painelGL</receiver>
+   <slot>setPixelCentrado()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>847</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pixelQuadrado_radiob</sender>
+   <signal>pressed()</signal>
+   <receiver>painelGL</receiver>
+   <slot>setPixelQuadrado()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>946</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>painelGL</sender>
+   <signal>sendOctante(int)</signal>
+   <receiver>labelOctanteValue</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>417</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>952</x>
+     <y>158</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
