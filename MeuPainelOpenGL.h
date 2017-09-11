@@ -28,7 +28,7 @@ public slots:
     void updateMalha(int valor);
     void setPixelCentrado();
     void setPixelQuadrado();
-    void setEspessura(double width);
+    void setEspessura(int width);
 
 protected:
     void initializeGL();

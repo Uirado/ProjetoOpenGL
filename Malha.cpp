@@ -15,7 +15,7 @@ int Malha::getSize(){
 }
 
 void Malha::draw(){
-    glColor3f(.5f, .5f, .5f);
+    glColor3f(.7f, .7f, .7f);
     glLineWidth(1.0f);
 
     glBegin(GL_LINES);

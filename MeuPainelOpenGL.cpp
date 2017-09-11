@@ -123,7 +123,7 @@ void MeuPainelOpenGL::setY2(int n) {
     updateGL();
 }
 
-void MeuPainelOpenGL::setEspessura(double width){
+void MeuPainelOpenGL::setEspessura(int width){
     reta.setWidth((float) width);
     updateGL();
 }
