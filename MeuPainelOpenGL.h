@@ -14,12 +14,13 @@ public:
 
 signals:
     void setMalhaSignal(int n);
-    void sendInt(int n);
-    void sendOctante(int n);
 
 public slots:
     void showMalhaToggle();
-    void showLinhaOriginalToggle();
+    void showRetaOpenGLToggle();
+    void showRetaDDAToggle();
+    void showRetaExplicitaToggle();
+    void showRetaPontoMedioToggle();
     void setX1(int n);
     void setX2(int n);
     void setY1(int n);
@@ -27,7 +28,7 @@ public slots:
     void updateMalha(int valor);
     void setPixelCentrado();
     void setPixelQuadrado();
-    void roundFloat(double n);
+    void setEspessura(double width);
 
 protected:
     void initializeGL();
@@ -37,7 +38,7 @@ protected:
 private:
     Malha malha;
     Reta reta;
-    bool showMalhaFlag, showLinhaOriginal;
+    bool showMalhaFlag, showRetaOpenGL, showRetaDDA, showRetaPontoMedio, showRetaExplicita;
     double menorX, maiorX, menorY, maiorY;
 };
 

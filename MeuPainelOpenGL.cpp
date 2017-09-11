@@ -10,7 +10,10 @@ MeuPainelOpenGL::MeuPainelOpenGL(QWidget *parent) :
 {
     setFormat(QGL::DoubleBuffer | QGL::DepthBuffer);
     showMalhaFlag = true;
-    showLinhaOriginal = true;
+    showRetaOpenGL = true;
+    showRetaDDA = false;
+    showRetaPontoMedio = false;
+    showRetaExplicita = false;
     updateMalha(20);
 }
 
@@ -24,8 +27,20 @@ void MeuPainelOpenGL::showMalhaToggle() {
     showMalhaFlag = !showMalhaFlag;
     updateGL();
 }
-void MeuPainelOpenGL::showLinhaOriginalToggle(){
-    showLinhaOriginal = !showLinhaOriginal;
+void MeuPainelOpenGL::showRetaOpenGLToggle(){
+    showRetaOpenGL = !showRetaOpenGL;
+    updateGL();
+}
+void MeuPainelOpenGL::showRetaDDAToggle(){
+    showRetaDDA = !showRetaDDA;
+    updateGL();
+}
+void MeuPainelOpenGL::showRetaExplicitaToggle(){
+    showRetaExplicita = !showRetaExplicita;
+    updateGL();
+}
+void MeuPainelOpenGL::showRetaPontoMedioToggle(){
+    showRetaPontoMedio = !showRetaPontoMedio;
     updateGL();
 }
 
@@ -52,7 +67,7 @@ void MeuPainelOpenGL::resizeGL(int width, int height) {
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(-malhaSize, malhaSize, -malhaSize, malhaSize);
+    gluOrtho2D(0, malhaSize, 0, malhaSize);
     glMatrixMode(GL_MODELVIEW);
 }
 
@@ -62,25 +77,19 @@ void MeuPainelOpenGL::paintGL() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity(); // limpa todas as transformações
 
-
-//    reta.setX1(11);
-//    reta.setY1(5);
-//    reta.setX2(8);
-//    reta.setY2(9);
-
     if(showMalhaFlag) malha.draw();
 
     glColor3f(0, 0, 1); //cor azul
-    reta.draw(dda);
+    if(showRetaDDA) reta.draw(dda);
 
     glColor3f(0, 0, 0); //cor preta
-    reta.draw(pontoMedio);
+    if(showRetaPontoMedio) reta.draw(pontoMedio);
 
-    glColor3f(0, 0.7f, 0); //cor verde
-    reta.draw(explicita);
+    glColor3f(0, 0.5f, 0); //cor verde
+    if(showRetaExplicita) reta.draw(explicita);
 
     glColor3f(1, 0, 0); //cor vermelha
-    if(showLinhaOriginal) reta.draw(openGl);
+    if(showRetaOpenGL) reta.draw(openGl);
 
 }
 
@@ -96,29 +105,25 @@ void MeuPainelOpenGL:: setPixelQuadrado(){
 
 void MeuPainelOpenGL::setX1(int n) {
     reta.setX1(n);
-    emit sendOctante(reta.getOctante());
     updateGL();
 }
 
 void MeuPainelOpenGL::setX2(int n) {
     reta.setX2(n);
-    emit sendOctante(reta.getOctante());
     updateGL();
 }
 
 void MeuPainelOpenGL::setY1(int n) {
     reta.setY1(n);
-    emit sendOctante(reta.getOctante());
     updateGL();
 }
 
 void MeuPainelOpenGL::setY2(int n) {
     reta.setY2(n);
-    emit sendOctante(reta.getOctante());
     updateGL();
 }
 
-
-void MeuPainelOpenGL::roundFloat(double n){
-    emit sendInt(Util::round((float) n));
+void MeuPainelOpenGL::setEspessura(double width){
+    reta.setWidth((float) width);
+    updateGL();
 }

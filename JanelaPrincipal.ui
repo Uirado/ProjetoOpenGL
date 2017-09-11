@@ -32,7 +32,7 @@
       <enum>Qt::RightToLeft</enum>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -44,6 +44,60 @@
      <property name="spacing">
       <number>6</number>
      </property>
+     <item row="12" column="0" colspan="2">
+      <widget class="QCheckBox" name="retaOpenGL_checkbox">
+       <property name="text">
+        <string>Reta original</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Espessura</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QDoubleSpinBox" name="espessura_spinBox">
+       <property name="minimum">
+        <double>1.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>7.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>X1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="0" colspan="2">
+      <widget class="QRadioButton" name="pixelQuadrado_radiob">
+       <property name="text">
+        <string>Pixel quadrado</string>
+       </property>
+      </widget>
+     </item>
+     <item row="19" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Malha:</string>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="1">
       <spacer name="verticalSpacer_2">
        <property name="orientation">
@@ -60,7 +114,7 @@
        </property>
       </spacer>
      </item>
-     <item row="9" column="0" colspan="2">
+     <item row="8" column="0" colspan="2">
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -73,17 +127,7 @@
        </property>
       </spacer>
      </item>
-     <item row="16" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox">
-       <property name="text">
-        <string>Mostrar linha original</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="17" column="0" colspan="2">
+     <item row="22" column="0" colspan="2">
       <widget class="QPushButton" name="bt_sair">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -158,7 +202,7 @@
        </property>
       </widget>
      </item>
-     <item row="14" column="1">
+     <item row="19" column="1">
       <widget class="QSpinBox" name="malha_spinBox">
        <property name="minimum">
         <number>1</number>
@@ -171,20 +215,7 @@
        </property>
       </widget>
      </item>
-     <item row="15" column="0" colspan="2">
-      <widget class="QCheckBox" name="showGrid_checkbox">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="text">
-        <string>Mostrar malha</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="0" colspan="2">
+     <item row="17" column="0" colspan="2">
       <widget class="QRadioButton" name="pixelCentrado_radiob">
        <property name="text">
         <string>Pixel centrado</string>
@@ -249,37 +280,45 @@
       </widget>
      </item>
      <item row="13" column="0" colspan="2">
-      <widget class="QRadioButton" name="pixelQuadrado_radiob">
+      <widget class="QCheckBox" name="showGrid_checkbox">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
        <property name="text">
-        <string>Pixel quadrado</string>
+        <string>Mostrar malha</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
+     <item row="11" column="0" colspan="2">
+      <widget class="QCheckBox" name="explicita_checkBox">
        <property name="text">
-        <string>X1</string>
+        <string>Explícita</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
-     <item row="14" column="0">
-      <widget class="QLabel" name="label_5">
+     <item row="10" column="0" colspan="2">
+      <widget class="QCheckBox" name="pontoMedio_checkBox">
        <property name="text">
-        <string>Malha:</string>
+        <string>Ponto médio</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label_6">
+     <item row="9" column="0" colspan="2">
+      <widget class="QCheckBox" name="dda_checkbox">
        <property name="text">
-        <string>Octante:</string>
+        <string>DDA</string>
        </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLabel" name="labelOctanteValue">
-       <property name="text">
-        <string>0</string>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -296,16 +335,19 @@
    <container>1</container>
    <slots>
     <signal>setMalhaSignal(int)</signal>
-    <signal>sendOctante(int)</signal>
     <slot>showMalhaToggle()</slot>
     <slot>setX1(int)</slot>
     <slot>setY1(int)</slot>
     <slot>setX2(int)</slot>
     <slot>setY2(int)</slot>
     <slot>updateMalha(int)</slot>
-    <slot>showLinhaOriginalToggle()</slot>
+    <slot>showRetaOpenGLToggle()</slot>
     <slot>setPixelCentrado()</slot>
     <slot>setPixelQuadrado()</slot>
+    <slot>setEspessura(double)</slot>
+    <slot>showRetaDDAToggle()</slot>
+    <slot>showRetaExplicitaToggle()</slot>
+    <slot>showRetaPontoMedioToggle()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -440,10 +482,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox</sender>
+   <sender>retaOpenGL_checkbox</sender>
    <signal>toggled(bool)</signal>
    <receiver>painelGL</receiver>
-   <slot>showLinhaOriginalToggle()</slot>
+   <slot>showRetaOpenGLToggle()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>879</x>
@@ -488,18 +530,66 @@
    </hints>
   </connection>
   <connection>
-   <sender>painelGL</sender>
-   <signal>sendOctante(int)</signal>
-   <receiver>labelOctanteValue</receiver>
-   <slot>setNum(int)</slot>
+   <sender>espessura_spinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>painelGL</receiver>
+   <slot>setEspessura(double)</slot>
    <hints>
     <hint type="sourcelabel">
+     <x>952</x>
+     <y>449</y>
+    </hint>
+    <hint type="destinationlabel">
      <x>417</x>
      <y>308</y>
     </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>explicita_checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>painelGL</receiver>
+   <slot>showRetaExplicitaToggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>913</x>
+     <y>425</y>
+    </hint>
     <hint type="destinationlabel">
-     <x>952</x>
-     <y>158</y>
+     <x>417</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dda_checkbox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>painelGL</receiver>
+   <slot>showRetaDDAToggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>913</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pontoMedio_checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>painelGL</receiver>
+   <slot>showRetaPontoMedioToggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>913</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>417</x>
+     <y>308</y>
     </hint>
    </hints>
   </connection>

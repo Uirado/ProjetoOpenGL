@@ -14,6 +14,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
+#include <QtGui/QDoubleSpinBox>
 #include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
@@ -33,9 +34,14 @@ public:
     QHBoxLayout *horizontalLayout;
     MeuPainelOpenGL *painelGL;
     QGridLayout *gridLayout;
+    QCheckBox *retaOpenGL_checkbox;
+    QLabel *label_6;
+    QDoubleSpinBox *espessura_spinBox;
+    QLabel *label_3;
+    QRadioButton *pixelQuadrado_radiob;
+    QLabel *label_5;
     QSpacerItem *verticalSpacer_2;
     QSpacerItem *verticalSpacer;
-    QCheckBox *checkBox;
     QPushButton *bt_sair;
     QSpacerItem *verticalSpacer_3;
     QSpinBox *x2_spinBox;
@@ -43,16 +49,14 @@ public:
     QLabel *label_4;
     QLabel *label;
     QSpinBox *malha_spinBox;
-    QCheckBox *showGrid_checkbox;
     QRadioButton *pixelCentrado_radiob;
     QSpinBox *y1_spinBox;
     QSpinBox *x1_spinBox;
     QSpinBox *y2_spinBox;
-    QRadioButton *pixelQuadrado_radiob;
-    QLabel *label_3;
-    QLabel *label_5;
-    QLabel *label_6;
-    QLabel *labelOctanteValue;
+    QCheckBox *showGrid_checkbox;
+    QCheckBox *explicita_checkBox;
+    QCheckBox *pontoMedio_checkBox;
+    QCheckBox *dda_checkbox;
 
     void setupUi(QWidget *JanelaPrincipal)
     {
@@ -73,7 +77,7 @@ public:
         painelGL->setSizePolicy(sizePolicy);
         painelGL->setMouseTracking(false);
         painelGL->setLayoutDirection(Qt::RightToLeft);
-        painelGL->setAutoFillBackground(true);
+        painelGL->setAutoFillBackground(false);
 
         horizontalLayout->addWidget(painelGL);
 
@@ -81,19 +85,48 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
+        retaOpenGL_checkbox = new QCheckBox(JanelaPrincipal);
+        retaOpenGL_checkbox->setObjectName(QString::fromUtf8("retaOpenGL_checkbox"));
+        retaOpenGL_checkbox->setChecked(true);
+
+        gridLayout->addWidget(retaOpenGL_checkbox, 12, 0, 1, 2);
+
+        label_6 = new QLabel(JanelaPrincipal);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+
+        gridLayout->addWidget(label_6, 14, 0, 1, 1);
+
+        espessura_spinBox = new QDoubleSpinBox(JanelaPrincipal);
+        espessura_spinBox->setObjectName(QString::fromUtf8("espessura_spinBox"));
+        espessura_spinBox->setMinimum(1);
+        espessura_spinBox->setMaximum(7);
+        espessura_spinBox->setSingleStep(0.1);
+        espessura_spinBox->setValue(1);
+
+        gridLayout->addWidget(espessura_spinBox, 14, 1, 1, 1);
+
+        label_3 = new QLabel(JanelaPrincipal);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout->addWidget(label_3, 2, 0, 1, 1);
+
+        pixelQuadrado_radiob = new QRadioButton(JanelaPrincipal);
+        pixelQuadrado_radiob->setObjectName(QString::fromUtf8("pixelQuadrado_radiob"));
+
+        gridLayout->addWidget(pixelQuadrado_radiob, 18, 0, 1, 2);
+
+        label_5 = new QLabel(JanelaPrincipal);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        gridLayout->addWidget(label_5, 19, 0, 1, 1);
+
         verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         gridLayout->addItem(verticalSpacer_2, 1, 1, 1, 1);
 
         verticalSpacer = new QSpacerItem(120, 350, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addItem(verticalSpacer, 9, 0, 1, 2);
-
-        checkBox = new QCheckBox(JanelaPrincipal);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setChecked(true);
-
-        gridLayout->addWidget(checkBox, 16, 0, 1, 2);
+        gridLayout->addItem(verticalSpacer, 8, 0, 1, 2);
 
         bt_sair = new QPushButton(JanelaPrincipal);
         bt_sair->setObjectName(QString::fromUtf8("bt_sair"));
@@ -105,7 +138,7 @@ public:
         bt_sair->setDefault(false);
         bt_sair->setFlat(false);
 
-        gridLayout->addWidget(bt_sair, 17, 0, 1, 2);
+        gridLayout->addWidget(bt_sair, 22, 0, 1, 2);
 
         verticalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -145,20 +178,13 @@ public:
         malha_spinBox->setMaximum(100);
         malha_spinBox->setValue(20);
 
-        gridLayout->addWidget(malha_spinBox, 14, 1, 1, 1);
-
-        showGrid_checkbox = new QCheckBox(JanelaPrincipal);
-        showGrid_checkbox->setObjectName(QString::fromUtf8("showGrid_checkbox"));
-        showGrid_checkbox->setLayoutDirection(Qt::LeftToRight);
-        showGrid_checkbox->setChecked(true);
-
-        gridLayout->addWidget(showGrid_checkbox, 15, 0, 1, 2);
+        gridLayout->addWidget(malha_spinBox, 19, 1, 1, 1);
 
         pixelCentrado_radiob = new QRadioButton(JanelaPrincipal);
         pixelCentrado_radiob->setObjectName(QString::fromUtf8("pixelCentrado_radiob"));
         pixelCentrado_radiob->setChecked(true);
 
-        gridLayout->addWidget(pixelCentrado_radiob, 12, 0, 1, 2);
+        gridLayout->addWidget(pixelCentrado_radiob, 17, 0, 1, 2);
 
         y1_spinBox = new QSpinBox(JanelaPrincipal);
         y1_spinBox->setObjectName(QString::fromUtf8("y1_spinBox"));
@@ -189,30 +215,30 @@ public:
 
         gridLayout->addWidget(y2_spinBox, 7, 1, 1, 1);
 
-        pixelQuadrado_radiob = new QRadioButton(JanelaPrincipal);
-        pixelQuadrado_radiob->setObjectName(QString::fromUtf8("pixelQuadrado_radiob"));
+        showGrid_checkbox = new QCheckBox(JanelaPrincipal);
+        showGrid_checkbox->setObjectName(QString::fromUtf8("showGrid_checkbox"));
+        showGrid_checkbox->setLayoutDirection(Qt::LeftToRight);
+        showGrid_checkbox->setChecked(true);
 
-        gridLayout->addWidget(pixelQuadrado_radiob, 13, 0, 1, 2);
+        gridLayout->addWidget(showGrid_checkbox, 13, 0, 1, 2);
 
-        label_3 = new QLabel(JanelaPrincipal);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        explicita_checkBox = new QCheckBox(JanelaPrincipal);
+        explicita_checkBox->setObjectName(QString::fromUtf8("explicita_checkBox"));
+        explicita_checkBox->setChecked(false);
 
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
+        gridLayout->addWidget(explicita_checkBox, 11, 0, 1, 2);
 
-        label_5 = new QLabel(JanelaPrincipal);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        pontoMedio_checkBox = new QCheckBox(JanelaPrincipal);
+        pontoMedio_checkBox->setObjectName(QString::fromUtf8("pontoMedio_checkBox"));
+        pontoMedio_checkBox->setChecked(false);
 
-        gridLayout->addWidget(label_5, 14, 0, 1, 1);
+        gridLayout->addWidget(pontoMedio_checkBox, 10, 0, 1, 2);
 
-        label_6 = new QLabel(JanelaPrincipal);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        dda_checkbox = new QCheckBox(JanelaPrincipal);
+        dda_checkbox->setObjectName(QString::fromUtf8("dda_checkbox"));
+        dda_checkbox->setChecked(false);
 
-        gridLayout->addWidget(label_6, 8, 0, 1, 1);
-
-        labelOctanteValue = new QLabel(JanelaPrincipal);
-        labelOctanteValue->setObjectName(QString::fromUtf8("labelOctanteValue"));
-
-        gridLayout->addWidget(labelOctanteValue, 8, 1, 1, 1);
+        gridLayout->addWidget(dda_checkbox, 9, 0, 1, 2);
 
 
         horizontalLayout->addLayout(gridLayout);
@@ -229,10 +255,13 @@ public:
         QObject::connect(y2_spinBox, SIGNAL(valueChanged(int)), painelGL, SLOT(setY2(int)));
         QObject::connect(painelGL, SIGNAL(setMalhaSignal(int)), malha_spinBox, SLOT(setValue(int)));
         QObject::connect(malha_spinBox, SIGNAL(valueChanged(int)), painelGL, SLOT(updateMalha(int)));
-        QObject::connect(checkBox, SIGNAL(toggled(bool)), painelGL, SLOT(showLinhaOriginalToggle()));
+        QObject::connect(retaOpenGL_checkbox, SIGNAL(toggled(bool)), painelGL, SLOT(showRetaOpenGLToggle()));
         QObject::connect(pixelCentrado_radiob, SIGNAL(pressed()), painelGL, SLOT(setPixelCentrado()));
         QObject::connect(pixelQuadrado_radiob, SIGNAL(pressed()), painelGL, SLOT(setPixelQuadrado()));
-        QObject::connect(painelGL, SIGNAL(sendOctante(int)), labelOctanteValue, SLOT(setNum(int)));
+        QObject::connect(espessura_spinBox, SIGNAL(valueChanged(double)), painelGL, SLOT(setEspessura(double)));
+        QObject::connect(explicita_checkBox, SIGNAL(toggled(bool)), painelGL, SLOT(showRetaExplicitaToggle()));
+        QObject::connect(dda_checkbox, SIGNAL(toggled(bool)), painelGL, SLOT(showRetaDDAToggle()));
+        QObject::connect(pontoMedio_checkBox, SIGNAL(toggled(bool)), painelGL, SLOT(showRetaPontoMedioToggle()));
 
         QMetaObject::connectSlotsByName(JanelaPrincipal);
     } // setupUi
@@ -240,18 +269,20 @@ public:
     void retranslateUi(QWidget *JanelaPrincipal)
     {
         JanelaPrincipal->setWindowTitle(QApplication::translate("JanelaPrincipal", "Projeto OpenGL", 0, QApplication::UnicodeUTF8));
-        checkBox->setText(QApplication::translate("JanelaPrincipal", "Mostrar linha original", 0, QApplication::UnicodeUTF8));
+        retaOpenGL_checkbox->setText(QApplication::translate("JanelaPrincipal", "Reta original", 0, QApplication::UnicodeUTF8));
+        label_6->setText(QApplication::translate("JanelaPrincipal", "Espessura", 0, QApplication::UnicodeUTF8));
+        label_3->setText(QApplication::translate("JanelaPrincipal", "X1", 0, QApplication::UnicodeUTF8));
+        pixelQuadrado_radiob->setText(QApplication::translate("JanelaPrincipal", "Pixel quadrado", 0, QApplication::UnicodeUTF8));
+        label_5->setText(QApplication::translate("JanelaPrincipal", "Malha:", 0, QApplication::UnicodeUTF8));
         bt_sair->setText(QApplication::translate("JanelaPrincipal", "Sair", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("JanelaPrincipal", "X2", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("JanelaPrincipal", "Y1", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("JanelaPrincipal", "Y2", 0, QApplication::UnicodeUTF8));
-        showGrid_checkbox->setText(QApplication::translate("JanelaPrincipal", "Mostrar malha", 0, QApplication::UnicodeUTF8));
         pixelCentrado_radiob->setText(QApplication::translate("JanelaPrincipal", "Pixel centrado", 0, QApplication::UnicodeUTF8));
-        pixelQuadrado_radiob->setText(QApplication::translate("JanelaPrincipal", "Pixel quadrado", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("JanelaPrincipal", "X1", 0, QApplication::UnicodeUTF8));
-        label_5->setText(QApplication::translate("JanelaPrincipal", "Malha:", 0, QApplication::UnicodeUTF8));
-        label_6->setText(QApplication::translate("JanelaPrincipal", "Octante:", 0, QApplication::UnicodeUTF8));
-        labelOctanteValue->setText(QApplication::translate("JanelaPrincipal", "0", 0, QApplication::UnicodeUTF8));
+        showGrid_checkbox->setText(QApplication::translate("JanelaPrincipal", "Mostrar malha", 0, QApplication::UnicodeUTF8));
+        explicita_checkBox->setText(QApplication::translate("JanelaPrincipal", "Expl\303\255cita", 0, QApplication::UnicodeUTF8));
+        pontoMedio_checkBox->setText(QApplication::translate("JanelaPrincipal", "Ponto m\303\251dio", 0, QApplication::UnicodeUTF8));
+        dda_checkbox->setText(QApplication::translate("JanelaPrincipal", "DDA", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

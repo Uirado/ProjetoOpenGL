@@ -16,15 +16,16 @@ public:
     void setX2(int n);
     void setY1(int n);
     void setY2(int n);
+    void setPixelModo(PixelModo pixelModo);
+    void setWidth(float width);
     int getX1();
     int getY1();
     int getX2();
     int getY2();
-    int getOctante();
-    void setPixelModo(PixelModo pixelModo);
 
 private:
-    int x1, y1, x2, y2, octante;
+    int x1, y1, x2, y2;
+    float width;
     PixelModo pixelModo;
 
     void drawRetaExplicita();
@@ -34,8 +35,6 @@ private:
     void drawPixelQuadrado(int x, int y);
     void drawPixelCentrado(int x, int y);
     void drawPixel(int x, int y);
-    void inverterPontos();
-    void checkOctante();
     void drawRetaPontoMedioOct1();
     void drawRetaPontoMedioOct3();
 
