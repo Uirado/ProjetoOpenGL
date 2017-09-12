@@ -9,477 +9,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>734</width>
-    <height>592</height>
+    <width>890</width>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Projeto OpenGL</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="spacing">
-      <number>6</number>
-     </property>
-     <item>
-      <widget class="QGroupBox" name="groupBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="baseSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <property name="title">
-        <string>Pontos</string>
-       </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>11</x>
-          <y>21</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>X1</string>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="x1_spinBox">
-        <property name="geometry">
-         <rect>
-          <x>11</x>
-          <y>40</y>
-          <width>53</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimum">
-         <number>-1000</number>
-        </property>
-        <property name="maximum">
-         <number>1000</number>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="y1_spinBox">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>40</y>
-          <width>53</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="frame">
-         <bool>true</bool>
-        </property>
-        <property name="showGroupSeparator" stdset="0">
-         <bool>false</bool>
-        </property>
-        <property name="minimum">
-         <number>-1000</number>
-        </property>
-        <property name="maximum">
-         <number>1000</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_4">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>21</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Y1</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>11</x>
-          <y>66</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>X2</string>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="x2_spinBox">
-        <property name="geometry">
-         <rect>
-          <x>11</x>
-          <y>85</y>
-          <width>53</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimum">
-         <number>-1000</number>
-        </property>
-        <property name="maximum">
-         <number>1000</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>66</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Y2</string>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="y2_spinBox">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>85</y>
-          <width>53</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimum">
-         <number>-1000</number>
-        </property>
-        <property name="maximum">
-         <number>1000</number>
-        </property>
-        <property name="value">
-         <number>0</number>
-        </property>
-       </widget>
-       <zorder>label_3</zorder>
-       <zorder>x1_spinBox</zorder>
-       <zorder>label_3</zorder>
-       <zorder>x1_spinBox</zorder>
-       <zorder>y1_spinBox</zorder>
-       <zorder>label_4</zorder>
-       <zorder>label_2</zorder>
-       <zorder>x2_spinBox</zorder>
-       <zorder>label</zorder>
-       <zorder>y2_spinBox</zorder>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox_2">
-       <property name="title">
-        <string>Malha</string>
-       </property>
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>51</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Tamanho:</string>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="malha_spinBox">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>50</y>
-          <width>51</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>100</number>
-        </property>
-        <property name="value">
-         <number>20</number>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="showGrid_checkbox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>91</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="text">
-         <string>Exibir</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QSlider" name="horizontalSlider">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>90</y>
-          <width>121</width>
-          <height>19</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>100</number>
-        </property>
-        <property name="value">
-         <number>20</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-       <zorder>label_5</zorder>
-       <zorder>malha_spinBox</zorder>
-       <zorder>showGrid_checkbox</zorder>
-       <zorder>horizontalSlider</zorder>
-       <zorder>groupBox</zorder>
-       <zorder>groupBox</zorder>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox_3">
-       <property name="title">
-        <string>Retas</string>
-       </property>
-       <widget class="QCheckBox" name="dda_checkbox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>44</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>DDA</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="pontoMedio_checkBox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>82</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Ponto médio</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="explicita_checkBox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>62</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Explícita</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-       <widget class="QCheckBox" name="retaOpenGL_checkbox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>80</y>
-          <width>101</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Original OpenGL</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox_4">
-       <property name="title">
-        <string>Pixel</string>
-       </property>
-       <widget class="QRadioButton" name="pixelCentrado_radiob">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>91</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Centrado</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QRadioButton" name="pixelQuadrado_radiob">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>94</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Quadrado</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_6">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>70</y>
-          <width>49</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Espessura</string>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="spinBox_espessura">
-        <property name="geometry">
-         <rect>
-          <x>70</x>
-          <y>70</y>
-          <width>51</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>7</number>
-        </property>
-       </widget>
-       <widget class="QSlider" name="horizontalSlider_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>100</y>
-          <width>121</width>
-          <height>19</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>7</number>
-        </property>
-        <property name="value">
-         <number>1</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="bt_sair">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Sair</string>
-       </property>
-       <property name="default">
-        <bool>false</bool>
-       </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,0">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>10</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
    <item>
     <widget class="MeuPainelOpenGL" name="painelGL" native="true">
      <property name="sizePolicy">
@@ -487,6 +39,18 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="sizeIncrement">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
      </property>
      <property name="mouseTracking">
       <bool>false</bool>
@@ -497,9 +61,594 @@
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
+     <zorder></zorder>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="16,10,13,7,1">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="title">
+           <string>Pontos</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <widget class="QLabel" name="label_3">
+           <property name="geometry">
+            <rect>
+             <x>11</x>
+             <y>21</y>
+             <width>16</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>X1</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="x1_spinBox">
+           <property name="geometry">
+            <rect>
+             <x>11</x>
+             <y>40</y>
+             <width>130</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="y1_spinBox">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>40</y>
+             <width>130</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <property name="showGroupSeparator" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>21</y>
+             <width>16</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Y1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>11</x>
+             <y>100</y>
+             <width>16</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>X2</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="x2_spinBox">
+           <property name="geometry">
+            <rect>
+             <x>11</x>
+             <y>119</y>
+             <width>130</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>100</y>
+             <width>16</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Y2</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="y2_spinBox">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>119</y>
+             <width>130</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimum">
+            <number>-1000</number>
+           </property>
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+          <widget class="QSlider" name="x1_slider">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>70</y>
+             <width>130</width>
+             <height>10</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>-100</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QSlider" name="y1_slider">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>70</y>
+             <width>130</width>
+             <height>10</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>-100</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QSlider" name="x2_slider">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>150</y>
+             <width>130</width>
+             <height>10</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>-100</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QSlider" name="y2_slider">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>150</y>
+             <width>130</width>
+             <height>10</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>-100</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Algoritmos de rasterização</string>
+          </property>
+          <widget class="QCheckBox" name="dda_checkbox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>44</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>DDA</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="pontoMedio_checkBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>82</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Ponto médio</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="explicita_checkBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>62</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Explícita</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="retaOpenGL_checkbox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>101</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Original OpenGL</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Malha</string>
+          </property>
+          <widget class="QLabel" name="label_5">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>89</y>
+             <width>51</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Tamanho:</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="malha_spinBox">
+           <property name="geometry">
+            <rect>
+             <x>69</x>
+             <y>87</y>
+             <width>221</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="showGrid_checkbox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>91</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Exibir malha</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QSlider" name="horizontalSlider">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>113</y>
+             <width>281</width>
+             <height>19</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="checkBox_pontosM">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>121</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Exibir pontos médios</string>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="checkBox_centros">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>121</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Sobrepor interseções</string>
+           </property>
+          </widget>
+          <zorder>label_5</zorder>
+          <zorder>malha_spinBox</zorder>
+          <zorder>showGrid_checkbox</zorder>
+          <zorder>horizontalSlider</zorder>
+          <zorder>checkBox_pontosM</zorder>
+          <zorder>checkBox_centros</zorder>
+          <zorder>groupBox</zorder>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Pixel centrado</string>
+          </property>
+          <widget class="QLabel" name="label_6">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>23</y>
+             <width>61</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Espessura:</string>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="spinBox_espessura">
+           <property name="geometry">
+            <rect>
+             <x>70</x>
+             <y>20</y>
+             <width>221</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>7</number>
+           </property>
+          </widget>
+          <widget class="QSlider" name="horizontalSlider_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>50</y>
+             <width>281</width>
+             <height>19</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>7</number>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="bt_sair">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Sair</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
+  <zorder>painelGL</zorder>
+  <zorder>quickWidget</zorder>
+  <zorder>widget</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -517,12 +666,12 @@
     <slot>setY2(int)</slot>
     <slot>updateMalha(int)</slot>
     <slot>showRetaOpenGLToggle()</slot>
-    <slot>setPixelCentrado()</slot>
-    <slot>setPixelQuadrado()</slot>
     <slot>setEspessura(int)</slot>
     <slot>showRetaDDAToggle()</slot>
     <slot>showRetaExplicitaToggle()</slot>
     <slot>showRetaPontoMedioToggle()</slot>
+    <slot>showMalhaPontosMToggle()</slot>
+    <slot>showMalhaCentrosToggle()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -537,8 +686,6 @@
   <tabstop>pontoMedio_checkBox</tabstop>
   <tabstop>explicita_checkBox</tabstop>
   <tabstop>retaOpenGL_checkbox</tabstop>
-  <tabstop>pixelCentrado_radiob</tabstop>
-  <tabstop>pixelQuadrado_radiob</tabstop>
   <tabstop>bt_sair</tabstop>
  </tabstops>
  <resources/>
@@ -688,38 +835,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>pixelCentrado_radiob</sender>
-   <signal>pressed()</signal>
-   <receiver>painelGL</receiver>
-   <slot>setPixelCentrado()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>110</x>
-     <y>458</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>401</x>
-     <y>308</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pixelQuadrado_radiob</sender>
-   <signal>pressed()</signal>
-   <receiver>painelGL</receiver>
-   <slot>setPixelQuadrado()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>113</x>
-     <y>478</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>401</x>
-     <y>308</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>explicita_checkBox</sender>
    <signal>toggled(bool)</signal>
    <receiver>painelGL</receiver>
@@ -802,6 +917,22 @@
   <connection>
    <sender>spinBox_espessura</sender>
    <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>502</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>80</x>
+     <y>531</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_espessura</sender>
+   <signal>valueChanged(int)</signal>
    <receiver>painelGL</receiver>
    <slot>setEspessura(int)</slot>
    <hints>
@@ -832,18 +963,162 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinBox_espessura</sender>
+   <sender>checkBox_centros</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>painelGL</receiver>
+   <slot>showMalhaCentrosToggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_pontosM</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>painelGL</receiver>
+   <slot>showMalhaPontosMToggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x1_slider</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>horizontalSlider_2</receiver>
+   <receiver>x1_spinBox</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>105</x>
-     <y>502</y>
+     <x>59</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>80</x>
-     <y>531</y>
+     <x>60</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x1_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>x1_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>59</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x2_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>x2_spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>86</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>x2_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>x2_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>86</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>85</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y1_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>y1_spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y1_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>y1_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>85</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y2_slider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>y2_spinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>y2_spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>y2_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>165</y>
     </hint>
    </hints>
   </connection>

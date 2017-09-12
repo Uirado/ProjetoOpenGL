@@ -8,8 +8,8 @@ Reta::Reta(){
     y1 = 0;
     x2 = 0;
     y2 = 0;
-    pixelModo = centrado;
     width = 1;
+    octante = 0;
 }
 
 Reta::Reta(int x1, int y1, int x2, int y2) {
@@ -17,8 +17,34 @@ Reta::Reta(int x1, int y1, int x2, int y2) {
     this->y1 = y1;
     this->x2 = x2;
     this->y2 = y2;
-    pixelModo = centrado;
     width = 1.5;
+}
+
+void Reta::updateOctante(){
+    int dx, dy, absDx, absDy;
+    dx = x2 - x1;
+    dy = y2 - y1;
+    absDx = abs(dx);
+    absDy = abs(dy);
+
+    if(dx == 0 && dy == 0) { octante = 0;}
+    else if(absDx >= absDy) { //mais horizontal que vertical;
+        if(dx >= 0) { // x crescente
+            if(dy >= 0) { octante = 1;}
+            else { octante = 8;}
+        } else { // x decrescente
+            if(dy >= 0) { octante = 4;}
+            else { octante = 5;}
+        }
+    } else { // mais vertical que horizontal
+        if(dx >= 0) { // x crescente
+            if(dy >= 0) { octante = 2;}
+            else { octante = 7;}
+        } else { // x decrescente
+            if(dy >= 0) { octante = 3;}
+            else{ octante = 6;}
+        }
+    }
 }
 
 void Reta::draw(Algoritmo algoritmo) {
@@ -97,9 +123,9 @@ void Reta::drawRetaPontoMedio(){
         x2 = y2;
         y2 = temp;
 
-        temp = dx;
-        dx = dy;
-        dy = temp;
+//        temp = dx;
+//        dx = dy;
+//        dy = temp;
         declive = true;
     }
 
@@ -111,8 +137,8 @@ void Reta::drawRetaPontoMedio(){
         temp = y1;
         y1 = y2;
         y2 = temp;
-        dx = -dx;
-        dy = -dy;
+//        dx = -dx;
+//        dy = -dy;
     }
     //fim do processo de conversão de octantes
 
@@ -124,8 +150,8 @@ void Reta::drawRetaPontoMedio(){
     xDraw = x1;
     yDraw = y1;
 
-    incE = a;
-    incNE = a + b;
+    incE = 2*a;
+    incNE = 2*(a + b);
 
     //verifica e converte de volta ao primeiro octante
     if(declive){
@@ -208,20 +234,7 @@ void Reta::drawRetaExplicita() {
 }
 
 void Reta::drawPixel(int x, int y){
-    if(pixelModo == centrado){
-        drawPixelCentrado(x, y);
-    } else{
-        drawPixelQuadrado(x, y);
-    }
-}
-
-void Reta::drawPixelQuadrado(int x, int y) {
-    glBegin(GL_POLYGON);
-        glVertex2f(x, y);
-        glVertex2f(x+width, y);
-        glVertex2f(x+width, y+width);
-        glVertex2f(x, y+width);
-    glEnd();
+    drawPixelCentrado(x, y);
 }
 
 void Reta::drawPixelCentrado(int x, int y) {
@@ -235,25 +248,24 @@ void Reta::drawPixelCentrado(int x, int y) {
     glEnd();
 }
 
-void Reta::setPixelModo(PixelModo pixel){
-    pixelModo = pixel;
-}
-
-
 void Reta::setX1(int n) {
     x1 = n;
+    updateOctante();
 }
 
 void Reta::setX2(int n) {
     x2 = n;
+    updateOctante();
 }
 
 void Reta::setY1(int n) {
     y1 = n;
+    updateOctante();
 }
 
 void Reta::setY2(int n) {
     y2 = n;
+    updateOctante();
 }
 
 void Reta::setWidth(float width){

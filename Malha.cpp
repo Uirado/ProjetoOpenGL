@@ -19,12 +19,44 @@ void Malha::draw(){
     glLineWidth(1.0f);
 
     glBegin(GL_LINES);
-        float temp;
-        for(temp = 1; temp < size; temp++) {
-            glVertex2i(temp, size);
-            glVertex2i(temp, 0);
-            glVertex2i(0, temp);
-            glVertex2i(size, temp);
+        int i;
+        for(i = 1; i < size; i++) {
+            glVertex2i(i, size);
+            glVertex2i(i, 0);
+            glVertex2i(0, i);
+            glVertex2i(size, i);
         }
     glEnd();
+}
+
+
+void Malha::drawPontosMedios(){
+    float i, j;
+    glColor3f(1,0,0);
+    for (i = -0.5; i < size; i++){
+        glBegin(GL_LINES);
+        for(j = 1; j < size; j++){
+            glVertex2f(j-0.05, i);
+            glVertex2f(j+0.05, i);
+            glVertex2f(i, j-0.05);
+            glVertex2f(i, j+0.05);
+        }
+        glEnd();
+    }
+}
+
+
+void Malha::drawCentros(){
+    float i, j;
+    glColor3f(0.7f,.7f,.7f);
+    for (i = 1; i < size; i++){
+        glBegin(GL_LINES);
+        for(j = 1; j < size; j++){
+            glVertex2f(j-0.05, i);
+            glVertex2f(j+0.05, i);
+            glVertex2f(i, j-0.05);
+            glVertex2f(i, j+0.05);
+        }
+        glEnd();
+    }
 }

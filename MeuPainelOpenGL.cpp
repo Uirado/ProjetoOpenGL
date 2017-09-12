@@ -14,12 +14,24 @@ MeuPainelOpenGL::MeuPainelOpenGL(QWidget *parent) :
     showRetaDDA = false;
     showRetaPontoMedio = false;
     showRetaExplicita = false;
-    updateMalha(20);
+    showMalhaPontosM = false;
+    showMalhaCentros = false;
+    updateMalha(10);
 }
 
 void MeuPainelOpenGL::updateMalha(int valor){
     malha.setSize(valor);
     resizeGL(this->width(), this->height());
+    updateGL();
+}
+
+void MeuPainelOpenGL::showMalhaPontosMToggle() {
+    showMalhaPontosM = !showMalhaPontosM;
+    updateGL();
+}
+
+void MeuPainelOpenGL::showMalhaCentrosToggle() {
+    showMalhaCentros = !showMalhaCentros;
     updateGL();
 }
 
@@ -46,9 +58,12 @@ void MeuPainelOpenGL::showRetaPontoMedioToggle(){
 
 void MeuPainelOpenGL::initializeGL()
 {
+    QColor cor = this->parentWidget()->palette().color(QPalette::Background); //pega cor de fundo da janela principal
     glShadeModel(GL_SMOOTH);
 
-    glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+    //glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+    glClearColor(cor.redF(), cor.greenF(), cor.blueF(), cor.alphaF());
+
     glClearDepth(1.0f);
 
     glEnable(GL_DEPTH_TEST);
@@ -77,6 +92,16 @@ void MeuPainelOpenGL::paintGL() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity(); // limpa todas as transformações
 
+
+    //quadrado de fundo branco
+    glColor3f(1,1,1); //cor branca
+    glBegin(GL_POLYGON);
+        glVertex2i(0,0);
+        glVertex2i(0, malha.getSize());
+        glVertex2i(malha.getSize(), malha.getSize());
+        glVertex2i(malha.getSize(), 0);
+    glEnd();
+
     if(showMalhaFlag) malha.draw();
 
     glColor3f(0, 0, 1); //cor azul
@@ -91,16 +116,9 @@ void MeuPainelOpenGL::paintGL() {
     glColor3f(1, 0, 0); //cor vermelha
     if(showRetaOpenGL) reta.draw(openGl);
 
-}
+    if(showMalhaPontosM) malha.drawPontosMedios();
+    if(showMalhaCentros) malha.drawCentros();
 
-void MeuPainelOpenGL::setPixelCentrado(){
-    reta.setPixelModo(centrado);
-    updateGL();
-}
-
-void MeuPainelOpenGL:: setPixelQuadrado(){
-    reta.setPixelModo(quadrado);
-    updateGL();
 }
 
 void MeuPainelOpenGL::setX1(int n) {

@@ -17,6 +17,8 @@ signals:
 
 public slots:
     void showMalhaToggle();
+    void showMalhaPontosMToggle();
+    void showMalhaCentrosToggle();
     void showRetaOpenGLToggle();
     void showRetaDDAToggle();
     void showRetaExplicitaToggle();
@@ -26,8 +28,6 @@ public slots:
     void setY1(int n);
     void setY2(int n);
     void updateMalha(int valor);
-    void setPixelCentrado();
-    void setPixelQuadrado();
     void setEspessura(int width);
 
 protected:
@@ -38,7 +38,7 @@ protected:
 private:
     Malha malha;
     Reta reta;
-    bool showMalhaFlag, showRetaOpenGL, showRetaDDA, showRetaPontoMedio, showRetaExplicita;
+    bool showMalhaFlag, showRetaOpenGL, showRetaDDA, showRetaPontoMedio, showRetaExplicita, showMalhaPontosM, showMalhaCentros;
     double menorX, maiorX, menorY, maiorY;
 };
 

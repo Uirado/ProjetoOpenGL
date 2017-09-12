@@ -4,7 +4,6 @@
 #include <string.h>
 
 enum Algoritmo {explicita, dda, pontoMedio, openGl};
-enum PixelModo {centrado, quadrado};
 
 class Reta {
 
@@ -16,7 +15,6 @@ public:
     void setX2(int n);
     void setY1(int n);
     void setY2(int n);
-    void setPixelModo(PixelModo pixelModo);
     void setWidth(float width);
     int getX1();
     int getY1();
@@ -24,19 +22,16 @@ public:
     int getY2();
 
 private:
-    int x1, y1, x2, y2;
+    int x1, y1, x2, y2, octante;
     float width;
-    PixelModo pixelModo;
 
     void drawRetaExplicita();
     void drawRetaDDA();
     void drawRetaPontoMedio();
     void drawRetaOpenGL();
-    void drawPixelQuadrado(int x, int y);
     void drawPixelCentrado(int x, int y);
     void drawPixel(int x, int y);
-    void drawRetaPontoMedioOct1();
-    void drawRetaPontoMedioOct3();
+    void updateOctante();
 
 };
 

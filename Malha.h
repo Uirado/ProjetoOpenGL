@@ -9,6 +9,8 @@ public:
     void setSize(int size);
     void draw();
     int getSize();
+    void drawPontosMedios();
+    void drawCentros();
 
 private:
     int size;
