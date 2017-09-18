@@ -200,37 +200,39 @@ void Reta::drawRetaOpenGL(){
 }
 
 void Reta::drawRetaExplicita() {
-    float x, y, dX, dY, m, B, absDy, absDx, menorX, maiorX, menorY, maiorY;
+    // os trechos comentados são usados caso queira tratar as retas mais verticais que horizontais
+
+    float x, y, dX, dY, m, B,menorX, maiorX/*, absDy, absDx, menorY, maiorY*/;
     dX = x2 - x1;
     dY = y2 - y1;
     menorX = Util::menor(x1, x2);
     maiorX = Util::maior(x1, x2);
-    menorY = Util::menor(y1, y2);
-    maiorY = Util::maior(y1, y2);
-    absDy = abs(dY);
-    absDx = abs(dX);
+//    menorY = Util::menor(y1, y2);
+//    maiorY = Util::maior(y1, y2);
+//    absDy = abs(dY);
+//    absDx = abs(dX);
 
     if(dX == 0) m = dY;
     else m = dY/dX;
 
     B = y1 - (x1 * m);
 
-    if(dX == 0){ //retas verticais (alfa = 90)
-        x = x1;
-        for(y = menorY; y <= maiorY; y++){
-            drawPixel(x, y);
-        }
-    }else if (absDx >= absDy) { //retas mais horixontais que verticais (alfa <= 45)
+//    if(dX == 0){ //retas verticais (alfa = 90)
+//        x = x1;
+//        for(y = menorY; y <= maiorY; y++){
+//            drawPixel(x, y);
+//        }
+//    }else if (absDx >= absDy) { //retas mais horizontais que verticais (alfa <= 45)
         for(x = menorX; x <= maiorX; x++) {
             y = Util::round(m*x + B);
             drawPixel(x, y);
         }
-    } else if(absDx < absDy) { //retas mais verticais que horizontais (alfa > 45)
-        for(y = menorY ; y <= maiorY; y++) {
-            x = Util::round((y - B)/m);
-            drawPixel(x, y);
-        }
-    }
+//    } else if(absDx < absDy) { //retas mais verticais que horizontais (alfa > 45)
+//        for(y = menorY ; y <= maiorY; y++) {
+//            x = Util::round((y - B)/m);
+//            drawPixel(x, y);
+//        }
+//    }
 }
 
 void Reta::drawPixel(int x, int y){
